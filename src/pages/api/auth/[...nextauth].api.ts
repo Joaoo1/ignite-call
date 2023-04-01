@@ -39,6 +39,13 @@ export function buildNextAuthOptions(
 
         return hasPermissions || '/register/connect-calendar?error=permissions'
       },
+
+      async session({ session, user }) {
+        return {
+          ...session,
+          user,
+        }
+      },
     },
   }
 }
